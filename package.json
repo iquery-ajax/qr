@@ -1,0 +1,6 @@
+{
+  "name": "miro-2fa",
+  "version": "1.0.0",
+  "description": "Miro 2FA Authenticator",
+  "private": true
+}
