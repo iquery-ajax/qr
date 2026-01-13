@@ -144,6 +144,11 @@ module.exports = async (req, res) => {
     const url = new URL(req.url, `http://${req.headers.host}`);
     const action = url.searchParams.get('action');
     
+    // Support GET parameters
+    const secretFromQuery = url.searchParams.get('secret');
+    const imageFromQuery = url.searchParams.get('image');
+    const urlFromQuery = url.searchParams.get('url');
+    
     let body = {};
     if (req.method === 'POST') {
         try {
@@ -156,6 +161,11 @@ module.exports = async (req, res) => {
             body = {};
         }
     }
+    
+    // Merge GET params with POST body (POST takes priority)
+    if (secretFromQuery && !body.secret) body.secret = secretFromQuery;
+    if (imageFromQuery && !body.image) body.image = imageFromQuery;
+    if (urlFromQuery && !body.url) body.url = urlFromQuery;
     
     try {
         switch (action) {
