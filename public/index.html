@@ -253,22 +253,20 @@
                 <div class="api-card">
                     <div class="api-header">
                         <span class="method post">POST</span>
-                        <code>https://qr.thsite.top/api.php?action=getcode</code>
+                        <code>/api?action=getcode</code>
                     </div>
                     <p class="api-desc">Generate a 2FA code from a secret key</p>
                     <div class="api-example">
                         <div class="example-label">cURL Example</div>
-                        <pre><code>curl -X POST "https://qr.thsite.top/api.php?action=getcode" \
+                        <pre><code>curl -X POST "https://qr-pi-lac.vercel.app/api?action=getcode" \
   -H "Content-Type: application/json" \
   -d '{"secret": "JBSWY3DPEHPK3PXP"}'</code></pre>
                     </div>
                     <div class="api-example">
                         <div class="example-label">Response</div>
                         <pre><code>{
-  "success": true,
   "secret": "JBSWY3DPEHPK3PXP",
-  "code": "123456",
-  "remaining": 25
+  "otp": "123456"
 }</code></pre>
                     </div>
                 </div>
@@ -277,24 +275,20 @@
                 <div class="api-card">
                     <div class="api-header">
                         <span class="method post">POST</span>
-                        <code>https://qr.thsite.top/api.php?action=parse</code>
+                        <code>/api?action=qrcode</code>
                     </div>
-                    <p class="api-desc">Parse an otpauth:// URL and generate code</p>
+                    <p class="api-desc">Decode QR code image and generate 2FA code</p>
                     <div class="api-example">
                         <div class="example-label">cURL Example</div>
-                        <pre><code>curl -X POST "https://qr.thsite.top/api.php?action=parse" \
+                        <pre><code>curl -X POST "https://qr-pi-lac.vercel.app/api?action=qrcode" \
   -H "Content-Type: application/json" \
-  -d '{"url": "otpauth://totp/Google:user@gmail.com?secret=JBSWY3DPEHPK3PXP&issuer=Google"}'</code></pre>
+  -d '{"image": "data:image/png;base64,..."}'</code></pre>
                     </div>
                     <div class="api-example">
                         <div class="example-label">Response</div>
                         <pre><code>{
-  "success": true,
   "secret": "JBSWY3DPEHPK3PXP",
-  "code": "123456",
-  "issuer": "Google",
-  "account": "user@gmail.com",
-  "remaining": 25
+  "otp": "123456"
 }</code></pre>
                     </div>
                 </div>
@@ -302,20 +296,21 @@
                 <!-- Endpoint 3 -->
                 <div class="api-card">
                     <div class="api-header">
-                        <span class="method get">GET</span>
-                        <code>https://qr.thsite.top/api.php</code>
+                        <span class="method post">POST</span>
+                        <code>/api?action=parse</code>
                     </div>
-                    <p class="api-desc">Get API information and available endpoints</p>
+                    <p class="api-desc">Parse an otpauth:// URL and generate code</p>
                     <div class="api-example">
                         <div class="example-label">cURL Example</div>
-                        <pre><code>curl "https://qr.thsite.top/api.php"</code></pre>
+                        <pre><code>curl -X POST "https://qr-pi-lac.vercel.app/api?action=parse" \
+  -H "Content-Type: application/json" \
+  -d '{"url": "otpauth://totp/Google:user@gmail.com?secret=JBSWY3DPEHPK3PXP"}'</code></pre>
                     </div>
                     <div class="api-example">
                         <div class="example-label">Response</div>
                         <pre><code>{
-  "name": "Miro 2FA API",
-  "version": "1.0.0",
-  "endpoints": {...}
+  "secret": "JBSWY3DPEHPK3PXP",
+  "otp": "123456"
 }</code></pre>
                     </div>
                 </div>
