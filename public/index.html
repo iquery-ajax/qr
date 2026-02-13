@@ -258,7 +258,7 @@
                     <p class="api-desc">Generate a 2FA code from a secret key</p>
                     <div class="api-example">
                         <div class="example-label">cURL Example</div>
-                        <pre><code>curl -X POST "https://qr-pi-lac.vercel.app/api?action=getcode" \
+                        <pre><code>curl -X POST "https://qr-2fa.vercel.app/api?action=getcode" \
   -H "Content-Type: application/json" \
   -d '{"secret": "JBSWY3DPEHPK3PXP"}'</code></pre>
                     </div>
@@ -280,7 +280,7 @@
                     <p class="api-desc">Decode QR code image and generate 2FA code</p>
                     <div class="api-example">
                         <div class="example-label">cURL Example</div>
-                        <pre><code>curl -X POST "https://qr-pi-lac.vercel.app/api?action=qrcode" \
+                        <pre><code>curl -X POST "https://qr-2fa.vercel.app/api?action=qrcode" \
   -H "Content-Type: application/json" \
   -d '{"image": "data:image/png;base64,..."}'</code></pre>
                     </div>
@@ -302,7 +302,7 @@
                     <p class="api-desc">Parse an otpauth:// URL and generate code</p>
                     <div class="api-example">
                         <div class="example-label">cURL Example</div>
-                        <pre><code>curl -X POST "https://qr-pi-lac.vercel.app/api?action=parse" \
+                        <pre><code>curl -X POST "https://qr-2fa.vercel.app/api?action=parse" \
   -H "Content-Type: application/json" \
   -d '{"url": "otpauth://totp/Google:user@gmail.com?secret=JBSWY3DPEHPK3PXP"}'</code></pre>
                     </div>
