@@ -1,0 +1,9 @@
+{
+  "name": "miro-2fa-private",
+  "version": "1.0.0",
+  "description": "Miro 2FA Authenticator - Private Edition (No External Dependencies)",
+  "private": true,
+  "keywords": ["2fa", "totp", "authenticator", "private", "secure", "offline"],
+  "author": "Private Edition",
+  "license": "MIT"
+}
