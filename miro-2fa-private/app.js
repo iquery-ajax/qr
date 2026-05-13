@@ -11,23 +11,19 @@ function toggleMobileMenu() {
 // ===== Tabs =====
 function initializeTabs() {
     document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            console.log('Tab clicked:', tab.dataset.tab); // Debug log
-            
-            // Remove active from all tabs
+        tab.addEventListener('click', (e) => {
+            // Use closest to handle clicks on text inside button
+            const clickedTab = e.currentTarget;
+            const tabName = clickedTab.dataset.tab;
+            if (!tabName) return;
+
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            
-            // Add active to clicked tab
-            tab.classList.add('active');
-            const tabId = tab.dataset.tab + '-tab';
-            const targetContent = document.getElementById(tabId);
-            
+
+            clickedTab.classList.add('active');
+            const targetContent = document.getElementById(tabName + '-tab');
             if (targetContent) {
                 targetContent.classList.add('active');
-                console.log('Activated tab content:', tabId); // Debug log
-            } else {
-                console.error('Tab content not found:', tabId); // Debug log
             }
         });
     });
@@ -1114,42 +1110,7 @@ if ('performance' in window) {
         }, 0);
     });
 }
-// ===== ENHANCED UI INTERACTIONS ===== 
-
-// Simplified tab interactions without tooltips
-        
-        // Show helpful tip for first-time users
-        const tabName = tab.dataset.tab;
-        const isFirstVisit = !localStorage.getItem(`miro_visited_${tabName}`);
-        
-        if (isFirstVisit) {
-            localStorage.setItem(`miro_visited_${tabName}`, 'true');
-            
-            // Show contextual help based on tab
-            setTimeout(() => {
-                let helpMessage = '';
-                switch (tabName) {
-                    case 'secret':
-                        helpMessage = 'Tip: You can find your secret key in your service\'s 2FA setup page';
-                        break;
-                    case 'qrcode':
-                        helpMessage = 'Tip: You can drag and drop images directly onto the upload area';
-                        break;
-                    case 'migration':
-                        helpMessage = 'Tip: This can extract hundreds of accounts from a single QR code';
-                        break;
-                    case 'base64':
-                        helpMessage = 'Tip: This is useful for developers working with image APIs';
-                        break;
-                }
-                
-                if (helpMessage) {
-                    showToast(helpMessage, 'info', 4000);
-                }
-            }, 500);
-        }
-    });
-});
+// ===== ENHANCED UI INTERACTIONS =====
 
 // Add keyboard navigation for tabs
 document.addEventListener('keydown', (e) => {
@@ -1346,38 +1307,7 @@ function reinitializeTabs() {
     initializeTabs();
 }
 
-// Add click handlers with event delegation for better reliability
-document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('tab')) {
-        e.preventDefault();
-        
-        const clickedTab = e.target;
-        const tabName = clickedTab.dataset.tab;
-        
-        console.log('Tab clicked via delegation:', tabName);
-        
-        if (!tabName) {
-            console.error('Tab missing data-tab attribute');
-            return;
-        }
-        
-        // Remove active from all tabs and content
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        
-        // Add active to clicked tab
-        clickedTab.classList.add('active');
-        
-        // Show corresponding content
-        const targetContent = document.getElementById(tabName + '-tab');
-        if (targetContent) {
-            targetContent.classList.add('active');
-            console.log('Successfully switched to tab:', tabName);
-        } else {
-            console.error('Tab content not found for:', tabName + '-tab');
-        }
-    }
-});
+// Tab switching handled by initializeTabs() above
 
 // Keyboard navigation for tabs
 document.addEventListener('keydown', function(e) {

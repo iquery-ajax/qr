@@ -145,7 +145,6 @@ body {
         padding: 0 var(--space-md);
     }
 }
-}
 
 a {
     text-decoration: none;
@@ -170,7 +169,7 @@ a {
 }
 
 .btn-primary {
-    background: var(--gradient);
+    background: var(--gradient-primary);
     color: white;
     box-shadow: var(--shadow-glow);
 }
@@ -184,7 +183,7 @@ a {
 .btn-secondary {
     background: var(--bg-card);
     color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-primary);
 }
 
 .btn-secondary:hover {
@@ -206,7 +205,7 @@ a {
     padding: 16px 0;
     background: rgba(10, 10, 15, 0.8);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-primary);
 }
 
 .navbar .container {
@@ -228,7 +227,7 @@ a {
 }
 
 .logo-text {
-    background: var(--gradient);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -276,7 +275,7 @@ a {
     right: 0;
     background: var(--bg-secondary);
     padding: 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-primary);
     z-index: 999;
 }
 
@@ -290,7 +289,7 @@ a {
 
 .mobile-menu li {
     padding: 12px 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-primary);
 }
 
 .mobile-menu a {
@@ -349,7 +348,7 @@ a {
 }
 
 .gradient-text {
-    background: var(--gradient);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -384,7 +383,7 @@ a {
     display: block;
     font-size: 36px;
     font-weight: 800;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -441,7 +440,7 @@ section {
     background: var(--bg-card);
     border-radius: var(--radius-xl);
     padding: 32px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-primary);
     box-shadow: var(--shadow-lg);
 }
 
@@ -472,7 +471,7 @@ section {
 }
 
 .tab.active {
-    background: var(--gradient);
+    background: var(--gradient-primary);
     color: white;
 }
 
@@ -503,7 +502,7 @@ section {
     width: 100%;
     padding: 14px 18px;
     background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-primary);
     border-radius: var(--radius-md);
     color: var(--text-primary);
     font-size: 15px;
@@ -532,7 +531,7 @@ section {
 
 /* Upload Area */
 .upload-area {
-    border: 2px dashed var(--border-color);
+    border: 2px dashed var(--border-primary);
     border-radius: var(--radius-lg);
     padding: 40px;
     text-align: center;
@@ -573,7 +572,7 @@ section {
     display: none;
     margin-top: 24px;
     padding-top: 24px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-primary);
 }
 
 .result-area.active {
@@ -625,7 +624,7 @@ section {
     font-weight: 800;
     text-align: center;
     letter-spacing: 12px;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -671,7 +670,7 @@ section {
 
 .info-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-primary);
     border-radius: var(--radius-lg);
     padding: 28px;
     transition: all 0.3s ease;
@@ -703,7 +702,7 @@ section {
 /* Steps */
 .steps-container {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-primary);
     border-radius: var(--radius-xl);
     padding: 40px;
 }
@@ -729,7 +728,7 @@ section {
 .step-number {
     width: 48px;
     height: 48px;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -764,7 +763,7 @@ section {
 
 .api-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-primary);
     border-radius: var(--radius-lg);
     padding: 24px;
     transition: all 0.3s ease;
@@ -838,7 +837,7 @@ section {
 /* Try API */
 .try-api {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-primary);
     border-radius: var(--radius-xl);
     padding: 32px;
 }
@@ -926,7 +925,7 @@ section {
 .security-badge {
     width: 280px;
     height: 280px;
-    background: var(--gradient);
+    background: var(--gradient-primary);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -957,7 +956,7 @@ section {
 .footer {
     background: var(--bg-secondary);
     padding: 60px 0 24px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-primary);
 }
 
 .footer-content {
@@ -1002,7 +1001,7 @@ section {
 .footer-bottom {
     text-align: center;
     padding-top: 24px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-primary);
 }
 
 .footer-bottom p {
@@ -1105,7 +1104,7 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--border-color);
+    background: var(--border-primary);
     border-radius: 4px;
 }
 
@@ -1126,7 +1125,7 @@ section {
     right: 24px;
     padding: 16px 24px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-primary);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
     z-index: 9999;
